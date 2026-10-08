@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fable Blocks – Simple toolbox block reference</title>
+<meta name="description" content="Every block in the Simple toolbox: 43 blocks in 9 categories, with what each one does and what to set on it.">
+<link rel="icon" type="image/png" href="/app-icons/icon-192.png">
+<style>
+  :root { --bg: #f6f7f9; --card: #ffffff; --text: #1d2330; --muted: #5b6475; --line: #e2e5ea; --accent: #1e88e5; --pic: #eef1f5; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #14171c; --card: #1d2129; --text: #e7eaf0; --muted: #a1a9b8; --line: #2c3240; --accent: #64b5f6; --pic: #272c36; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header { padding: 28px 16px 8px; max-width: 1200px; margin: 0 auto; }
+  header h1 { margin: 0 0 6px; font-size: 28px; }
+  header p { margin: 0 0 10px; color: var(--muted); }
+  .links a { margin-right: 16px; color: var(--accent); font-weight: 600; text-decoration: none; }
+  nav { position: sticky; top: 0; z-index: 1; background: var(--bg); border-bottom: 1px solid var(--line); }
+  nav div { max-width: 1200px; margin: 0 auto; padding: 8px 16px; display: flex; gap: 6px; overflow-x: auto; }
+  nav a { flex: none; padding: 5px 12px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); color: var(--text); text-decoration: none; font-size: 14px; }
+  main { max-width: 1200px; margin: 0 auto; padding: 0 16px 48px; }
+  details { margin: 16px 0; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; }
+  details summary { cursor: pointer; font-weight: 600; }
+  details li { margin: 6px 0; }
+  section { scroll-margin-top: 56px; }
+  h2 { margin: 32px 0 4px; font-size: 22px; }
+  .intro { margin: 0 0 12px; color: var(--muted); }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px; min-width: 0; }
+  .pic { background: var(--pic); border-radius: 8px; padding: 10px; overflow-x: auto; }
+  .pic img { display: block; max-width: 100%; height: auto; }
+  .card h3 { margin: 10px 0 4px; font-size: 16px; }
+  .card p { margin: 0 0 6px; }
+  .settings { color: var(--muted); font-size: 14px; }
+  .settings span { font-weight: 600; color: var(--text); margin-right: 4px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Fable Blocks – Simple toolbox block reference</h1>
+  <p>Every block in the Simple toolbox: 43 blocks in 9 categories, with what each one does and what to set on it. 43 pictures below.</p>
+  <p class="links"><a href="/">Open the app</a><a href="/advanced/">Advanced toolbox →</a></p>
+</header>
+<nav><div><a href="#logic">Logic</a><a href="#output">Output</a><a href="#loops">Loops</a><a href="#colors">Colors</a><a href="#input">Input</a><a href="#ai-senses">AI Senses</a><a href="#data">Data</a><a href="#text">Text</a><a href="#math">Math</a></div></nav>
+<main>
+  <details>
+    <summary>How to use this reference</summary>
+    <ul><li>Pick Settings (gear) → Toolbox → Simple to show these blocks; the categories are down the left of the workspace.</li><li>On Module dropdown: blocks for a Joint, Spin or Face act on one module. Connect the hub first, then pick the module's ID (for example LJ9). Left on “none”, the block does nothing.</li><li>Order: blocks run top to bottom, each waiting for the one before. Spin Set Drive and Spin Set Spin keep moving while the next blocks run; the program waits for them before it ends.</li><li>Speed is a percentage (0–100) of the motor's top speed.</li><li>Numbers go in the round slots: drag a Math block in, or type over the number already there.</li></ul>
+  </details>
+  
+    <section id="logic">
+      <h2>Logic</h2>
+      <p class="intro">Decisions: run blocks only when something is true.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-logic-1.png" width="140" height="74" style="min-width:84px" alt="if … do block" loading="lazy"></div>
+          <h3>if … do</h3>
+          <p>Runs the blocks inside only when the condition is true.</p>
+          <p class="settings"><span>Settings</span> Condition slot (a Logic or Input block).</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-logic-2.png" width="152" height="108" style="min-width:91px" alt="if … do … else block" loading="lazy"></div>
+          <h3>if … do … else</h3>
+          <p>Runs the first group when the condition is true, otherwise the second.</p>
+          <p class="settings"><span>Settings</span> Condition slot.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-logic-3.png" width="173" height="46" style="min-width:104px" alt="[ ] = [ ] (compare) block" loading="lazy"></div>
+          <h3>[ ] = [ ] (compare)</h3>
+          <p>True when the two values compare as chosen.</p>
+          <p class="settings"><span>Settings</span> =, ≠, &lt;, ≤, &gt;, ≥</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-logic-4.png" width="254" height="46" style="min-width:152px" alt="[ ] and [ ] block" loading="lazy"></div>
+          <h3>[ ] and [ ]</h3>
+          <p>and: true when both sides are true. or: true when at least one is.</p>
+          <p class="settings"><span>Settings</span> and, or</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-logic-5.png" width="132" height="36" style="min-width:79px" alt="not [ ] block" loading="lazy"></div>
+          <h3>not [ ]</h3>
+          <p>Turns true into false and false into true.</p>
+          <p class="settings"><span>Settings</span> —</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-logic-6.png" width="80" height="36" style="min-width:48px" alt="true block" loading="lazy"></div>
+          <h3>true</h3>
+          <p>A fixed true or false value.</p>
+          <p class="settings"><span>Settings</span> true, false</p>
+        </article>
+      </div>
+    </section>
+    <section id="output">
+      <h2>Output</h2>
+      <p class="intro">Make things happen: drive a Spin, move a Joint, change the Face, light up modules, speak and play sounds.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-output-1.png" width="404" height="58" style="min-width:242px" alt="Spin Set Drive Forward block" loading="lazy"></div>
+          <h3>Spin Set Drive Forward</h3>
+          <p>Starts the Spin driving (speed 50) and keeps going until another drive block, Stop, or the end of the program. Left / Right turn on the spot.</p>
+          <p class="settings"><span>Settings</span> Forward, Backward, Stop, Left, Right · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-output-2.png" width="506" height="66" style="min-width:304px" alt="Spin Set Drive [75] Centimeters block" loading="lazy"></div>
+          <h3>Spin Set Drive [75] Centimeters</h3>
+          <p>Drives straight that distance at speed 50, then stops. A negative number drives backward.</p>
+          <p class="settings"><span>Settings</span> Distance · Meters, Centimeters, Feet, Inches · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-output-3.png" width="469" height="66" style="min-width:281px" alt="Spin Set Spin [90] Degrees block" loading="lazy"></div>
+          <h3>Spin Set Spin [90] Degrees</h3>
+          <p>Turns on the spot by that amount at speed 50. Positive turns clockwise (12 → 3 o'clock), negative counterclockwise.</p>
+          <p class="settings"><span>Settings</span> Amount · Times (full turns), Degrees, Radians · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-output-4.png" width="562" height="58" style="min-width:337px" alt="Spin Set Headlights block" loading="lazy"></div>
+          <h3>Spin Set Headlights</h3>
+          <p>Switches the Spin's headlights.</p>
+          <p class="settings"><span>Settings</span> Turn On, Turn Off, Toggle · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-output-5.png" width="668" height="66" style="min-width:401px" alt="Joint Set Motor Position x: y: block" loading="lazy"></div>
+          <h3>Joint Set Motor Position x: y:</h3>
+          <p>Moves the Joint's two motors to these angles (speed 50).</p>
+          <p class="settings"><span>Settings</span> x and y: −90 to 90 degrees · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-output-6.png" width="341" height="58" style="min-width:205px" alt="Face Set Emotion block" loading="lazy"></div>
+          <h3>Face Set Emotion</h3>
+          <p>Shows an expression on the Face.</p>
+          <p class="settings"><span>Settings</span> Neutral, Happy, Sad, Angry, Tired, Surprised, Fear, Disgust, Close Left Eye, Close Right Eye</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-output-7.png" width="427" height="66" style="min-width:256px" alt="Face Set Eyes Color block" loading="lazy"></div>
+          <h3>Face Set Eyes Color</h3>
+          <p>Colors the Face's irises or eyelids.</p>
+          <p class="settings"><span>Settings</span> Iris, Eyelid · color slot</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-output-8.png" width="245" height="66" style="min-width:147px" alt="Set Color block" loading="lazy"></div>
+          <h3>Set Color</h3>
+          <p>Sets the light of a module (or the hub) to a color.</p>
+          <p class="settings"><span>Settings</span> Color slot · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-output-9.png" width="373" height="66" style="min-width:224px" alt="Speak block" loading="lazy"></div>
+          <h3>Speak</h3>
+          <p>Says the text out loud.</p>
+          <p class="settings"><span>Settings</span> Text slot · English, Română, Polski, Українська, العربية, Dansk, Français, Español, Nederlands, Italiano, Deutsch, Русский</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-output-10.png" width="265" height="58" style="min-width:159px" alt="Play Sound block" loading="lazy"></div>
+          <h3>Play Sound</h3>
+          <p>Plays a sound effect.</p>
+          <p class="settings"><span>Settings</span> Angry, Boing, Buzz, Chimp, Elephant, Drum, Fart 1, Fart 2, Laugh, Pling, Running, The End, Twirly, Woof</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-output-11.png" width="214" height="58" style="min-width:128px" alt="Play Note block" loading="lazy"></div>
+          <h3>Play Note</h3>
+          <p>Plays one musical note.</p>
+          <p class="settings"><span>Settings</span> C, D, E, F, G, A, B, C High</p>
+        </article>
+      </div>
+    </section>
+    <section id="loops">
+      <h2>Loops</h2>
+      <p class="intro">Repeat blocks, or wait.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-loops-1.png" width="185" height="66" style="min-width:111px" alt="Wait Time [1] block" loading="lazy"></div>
+          <h3>Wait Time [1]</h3>
+          <p>Pauses the program for that many seconds.</p>
+          <p class="settings"><span>Settings</span> Seconds (decimals allowed).</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-loops-2.png" width="703" height="84" style="min-width:422px" alt="Wait Until [ ] block" loading="lazy"></div>
+          <h3>Wait Until [ ]</h3>
+          <p>Pauses until the condition becomes true. Comes with Spin Has Reached Target in the slot.</p>
+          <p class="settings"><span>Settings</span> Condition slot.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-loops-3.png" width="218" height="74" style="min-width:131px" alt="repeat while [ ] do block" loading="lazy"></div>
+          <h3>repeat while [ ] do</h3>
+          <p>while: repeats the blocks inside as long as the condition is true. until: repeats until it becomes true.</p>
+          <p class="settings"><span>Settings</span> while, until · condition slot</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-loops-4.png" width="183" height="84" style="min-width:110px" alt="repeat [10] times do block" loading="lazy"></div>
+          <h3>repeat [10] times do</h3>
+          <p>Repeats the blocks inside a set number of times.</p>
+          <p class="settings"><span>Settings</span> Number of times.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-loops-5.png" width="121" height="75" style="min-width:73px" alt="While Forever do block" loading="lazy"></div>
+          <h3>While Forever do</h3>
+          <p>Repeats the blocks inside until you press Stop.</p>
+          <p class="settings"><span>Settings</span> —</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-loops-6.png" width="172" height="46" style="min-width:103px" alt="break out of loop block" loading="lazy"></div>
+          <h3>break out of loop</h3>
+          <p>Inside a loop: break out leaves the loop now; continue with next iteration skips to the next round.</p>
+          <p class="settings"><span>Settings</span> break out, continue with next iteration</p>
+        </article>
+      </div>
+    </section>
+    <section id="colors">
+      <h2>Colors</h2>
+      <p class="intro">A color for any block with a color slot.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-colors-1.png" width="44" height="36" style="min-width:26px" alt="Color swatch block" loading="lazy"></div>
+          <h3>Color swatch</h3>
+          <p>A color, for any block with a color slot (Set Color, Face Set Eyes Color).</p>
+          <p class="settings"><span>Settings</span> Tap it to pick from the palette.</p>
+        </article>
+      </div>
+    </section>
+    <section id="input">
+      <h2>Input</h2>
+      <p class="intro">Read sensors, motors, time and keys. These blocks fit into slots (for example in if or Wait Until).</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-input-1.png" width="585" height="62" style="min-width:351px" alt="Spin Obstacle Detected [50] block" loading="lazy"></div>
+          <h3>Spin Obstacle Detected [50]</h3>
+          <p>True when any of the Spin's three distance sensors reaches that level, i.e. something is close to it.</p>
+          <p class="settings"><span>Settings</span> Level 0–100 (higher = nearer) · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-input-2.png" width="583" height="61" style="min-width:350px" alt="Spin Color Found block" loading="lazy"></div>
+          <h3>Spin Color Found</h3>
+          <p>True when the chosen color sensor sees that color (the headlight turns on to look).</p>
+          <p class="settings"><span>Settings</span> red, green, blue, yellow, magenta, cyan, white, black · sensor 1, 2, 3 · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-input-3.png" width="567" height="54" style="min-width:340px" alt="Spin Has Reached Target block" loading="lazy"></div>
+          <h3>Spin Has Reached Target</h3>
+          <p>True when the last Spin Set Drive … cm or Spin Set Spin has finished.</p>
+          <p class="settings"><span>Settings</span> No Motors, Any Motors, Both Motors, Motor A, Motor B · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-input-4.png" width="435" height="54" style="min-width:261px" alt="Joint Motor Get Position block" loading="lazy"></div>
+          <h3>Joint Motor Get Position</h3>
+          <p>The Joint motor's current angle in degrees.</p>
+          <p class="settings"><span>Settings</span> x, y · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-input-5.png" width="370" height="54" style="min-width:222px" alt="Face Read Sensor block" loading="lazy"></div>
+          <h3>Face Read Sensor</h3>
+          <p>A reading from the Face (the phone or tablet running it).</p>
+          <p class="settings"><span>Settings</span> Acceleration X/Y/Z, Compass, Touch Count, Touch Position X/Y, Latitude, Longitude, Altitude</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-input-6.png" width="132" height="54" style="min-width:79px" alt="Get Time block" loading="lazy"></div>
+          <h3>Get Time</h3>
+          <p>Seconds since the program started.</p>
+          <p class="settings"><span>Settings</span> —</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-input-7.png" width="270" height="54" style="min-width:162px" alt="Check For Key block" loading="lazy"></div>
+          <h3>Check For Key</h3>
+          <p>True while that key is held down.</p>
+          <p class="settings"><span>Settings</span> Spacebar, Up, Down, Left, Right</p>
+        </article>
+      </div>
+    </section>
+    <section id="ai-senses">
+      <h2>AI Senses</h2>
+      <p class="intro">Object recognition by the Face module's camera; a Face must be connected.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-ai-senses-1.png" width="643" height="54" style="min-width:386px" alt="Face Get If Object Recognized block" loading="lazy"></div>
+          <h3>Face Get If Object Recognized</h3>
+          <p>True when the Face's camera currently sees an object of that kind.</p>
+          <p class="settings"><span>Settings</span> Object kind: Person, Cat, Dog, Car, Cup, Laptop, Cell Phone and more (80 kinds).</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-ai-senses-2.png" width="753" height="54" style="min-width:452px" alt="Face Read Sensor … Of Object Class block" loading="lazy"></div>
+          <h3>Face Read Sensor … Of Object Class</h3>
+          <p>One detail about a recognized object of that kind; empty if none is seen.</p>
+          <p class="settings"><span>Settings</span> Label, Distance, Horizontal Angle, Vertical Angle, Emotion, Facial Expression · object kind</p>
+        </article>
+      </div>
+    </section>
+    <section id="data">
+      <h2>Data</h2>
+      <p class="intro">Show values and draw graphs.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-data-1.png" width="270" height="66" style="min-width:162px" alt="Print [ ] block" loading="lazy"></div>
+          <h3>Print [ ]</h3>
+          <p>Writes the value in the Console panel (Copy console / Clear console are above it).</p>
+          <p class="settings"><span>Settings</span> Value slot (text or number).</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-data-2.png" width="340" height="66" style="min-width:204px" alt="Time Series [ ] block" loading="lazy"></div>
+          <h3>Time Series [ ]</h3>
+          <p>Adds the value as the next point on a live graph line.</p>
+          <p class="settings"><span>Settings</span> Value slot · line color: Red, Green, Blue, Yellow, Cyan, Magenta</p>
+        </article>
+      </div>
+    </section>
+    <section id="text">
+      <h2>Text</h2>
+      <p class="intro">Words and sentences.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-text-1.png" width="87" height="36" style="min-width:52px" alt="“ ” block" loading="lazy"></div>
+          <h3>“ ”</h3>
+          <p>A piece of text you type.</p>
+          <p class="settings"><span>Settings</span> The text.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-text-2.png" width="244" height="46" style="min-width:146px" alt="[ ] + [ ] block" loading="lazy"></div>
+          <h3>[ ] + [ ]</h3>
+          <p>Joins two values into one text, with a space between (e.g. &quot;Number 1&quot;).</p>
+          <p class="settings"><span>Settings</span> Two value slots.</p>
+        </article>
+      </div>
+    </section>
+    <section id="math">
+      <h2>Math</h2>
+      <p class="intro">Numbers and calculations.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-math-1.png" width="47" height="36" style="min-width:28px" alt="0 block" loading="lazy"></div>
+          <h3>0</h3>
+          <p>A number you type.</p>
+          <p class="settings"><span>Settings</span> The number.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-math-2.png" width="173" height="46" style="min-width:104px" alt="[ ] + [ ] block" loading="lazy"></div>
+          <h3>[ ] + [ ]</h3>
+          <p>The result of a calculation on two numbers.</p>
+          <p class="settings"><span>Settings</span> +, −, ×, ÷, ^ (power)</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-math-3.png" width="59" height="36" style="min-width:35px" alt="π block" loading="lazy"></div>
+          <h3>π</h3>
+          <p>A math constant.</p>
+          <p class="settings"><span>Settings</span> π, e, φ, sqrt(2), sqrt(½), ∞</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-math-4.png" width="106" height="36" style="min-width:64px" alt="Angle [0] block" loading="lazy"></div>
+          <h3>Angle [0]</h3>
+          <p>An angle you pick on a dial, in degrees.</p>
+          <p class="settings"><span>Settings</span> The angle.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-math-5.png" width="200" height="36" style="min-width:120px" alt="round [ ] block" loading="lazy"></div>
+          <h3>round [ ]</h3>
+          <p>The number rounded.</p>
+          <p class="settings"><span>Settings</span> round, round up, round down</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/simple-math-6.png" width="335" height="46" style="min-width:201px" alt="random integer from [ ] to [ ] block" loading="lazy"></div>
+          <h3>random integer from [ ] to [ ]</h3>
+          <p>A random whole number between the two, both included.</p>
+          <p class="settings"><span>Settings</span> Lowest, highest.</p>
+        </article>
+      </div>
+    </section>
+</main>
+</body>
+</html>

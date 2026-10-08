@@ -1,0 +1,909 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fable Blocks – Advanced toolbox block reference</title>
+<meta name="description" content="Every block in the Advanced toolbox: 119 blocks in 12 categories, plus the Functions and Variables categories, whose blocks appear as you create them.">
+<link rel="icon" type="image/png" href="/app-icons/icon-192.png">
+<style>
+  :root { --bg: #f6f7f9; --card: #ffffff; --text: #1d2330; --muted: #5b6475; --line: #e2e5ea; --accent: #1e88e5; --pic: #eef1f5; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #14171c; --card: #1d2129; --text: #e7eaf0; --muted: #a1a9b8; --line: #2c3240; --accent: #64b5f6; --pic: #272c36; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header { padding: 28px 16px 8px; max-width: 1200px; margin: 0 auto; }
+  header h1 { margin: 0 0 6px; font-size: 28px; }
+  header p { margin: 0 0 10px; color: var(--muted); }
+  .links a { margin-right: 16px; color: var(--accent); font-weight: 600; text-decoration: none; }
+  nav { position: sticky; top: 0; z-index: 1; background: var(--bg); border-bottom: 1px solid var(--line); }
+  nav div { max-width: 1200px; margin: 0 auto; padding: 8px 16px; display: flex; gap: 6px; overflow-x: auto; }
+  nav a { flex: none; padding: 5px 12px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); color: var(--text); text-decoration: none; font-size: 14px; }
+  main { max-width: 1200px; margin: 0 auto; padding: 0 16px 48px; }
+  details { margin: 16px 0; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; }
+  details summary { cursor: pointer; font-weight: 600; }
+  details li { margin: 6px 0; }
+  section { scroll-margin-top: 56px; }
+  h2 { margin: 32px 0 4px; font-size: 22px; }
+  .intro { margin: 0 0 12px; color: var(--muted); }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px; min-width: 0; }
+  .pic { background: var(--pic); border-radius: 8px; padding: 10px; overflow-x: auto; }
+  .pic img { display: block; max-width: 100%; height: auto; }
+  .card h3 { margin: 10px 0 4px; font-size: 16px; }
+  .card p { margin: 0 0 6px; }
+  .settings { color: var(--muted); font-size: 14px; }
+  .settings span { font-weight: 600; color: var(--text); margin-right: 4px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Fable Blocks – Advanced toolbox block reference</h1>
+  <p>Every block in the Advanced toolbox: 119 blocks in 12 categories, plus the Functions and Variables categories, whose blocks appear as you create them. 126 pictures below.</p>
+  <p class="links"><a href="/">Open the app</a><a href="/simple/">Simple toolbox →</a></p>
+</header>
+<nav><div><a href="#logic">Logic</a><a href="#output">Output</a><a href="#loops">Loops</a><a href="#colors">Colors</a><a href="#functions">Functions</a><a href="#input">Input</a><a href="#ai-senses">AI Senses</a><a href="#vision">Vision</a><a href="#data">Data</a><a href="#variables">Variables</a><a href="#text">Text</a><a href="#lists">Lists</a><a href="#math">Math</a><a href="#prototypes">Prototypes</a></div></nav>
+<main>
+  <details>
+    <summary>How to use this reference</summary>
+    <ul><li>Pick Settings (gear) → Toolbox → Advanced to show these blocks; the categories are down the left of the workspace.</li><li>On Module dropdown: blocks for a Joint, Spin or Face act on one module. Connect the hub first, then pick the module's ID (for example LJ9). Left on “none”, the block does nothing.</li><li>Order: blocks run top to bottom, each waiting for the one before. Spin Set Drive … and Spin Set Spin … keep moving while the next blocks run; the program waits for them before it ends.</li><li>Speed is a percentage of the motor's top speed: Spin −100 to 100 (negative = reverse), Joint 0 to 100. Values outside the range are capped and listed under the “!” warnings.</li><li>Camera blocks (Vision) use the camera of the device you program on; AI Senses use the Face module's camera.</li><li>Every block also exists as text code: View code shows it, and Text mode accepts the same commands.</li></ul>
+  </details>
+  
+    <section id="logic">
+      <h2>Logic</h2>
+      <p class="intro">Decisions: run blocks only when something is true.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-logic-1.png" width="140" height="74" style="min-width:84px" alt="if … do block" loading="lazy"></div>
+          <h3>if … do</h3>
+          <p>Runs the blocks inside only when the condition is true. Use the gear to add else if / else.</p>
+          <p class="settings"><span>Settings</span> Condition slot (a Logic or Input block).</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-logic-2.png" width="152" height="108" style="min-width:91px" alt="if … do … else block" loading="lazy"></div>
+          <h3>if … do … else</h3>
+          <p>Runs the first group when the condition is true, otherwise the second.</p>
+          <p class="settings"><span>Settings</span> Condition slot.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-logic-3.png" width="173" height="46" style="min-width:104px" alt="[ ] = [ ] (compare) block" loading="lazy"></div>
+          <h3>[ ] = [ ] (compare)</h3>
+          <p>True when the two values compare as chosen.</p>
+          <p class="settings"><span>Settings</span> =, ≠, &lt;, ≤, &gt;, ≥</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-logic-4.png" width="254" height="46" style="min-width:152px" alt="[ ] and [ ] block" loading="lazy"></div>
+          <h3>[ ] and [ ]</h3>
+          <p>and: true when both sides are true. or: true when at least one is.</p>
+          <p class="settings"><span>Settings</span> and, or</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-logic-5.png" width="132" height="36" style="min-width:79px" alt="not [ ] block" loading="lazy"></div>
+          <h3>not [ ]</h3>
+          <p>Turns true into false and false into true.</p>
+          <p class="settings"><span>Settings</span> —</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-logic-6.png" width="80" height="36" style="min-width:48px" alt="true block" loading="lazy"></div>
+          <h3>true</h3>
+          <p>A fixed true or false value.</p>
+          <p class="settings"><span>Settings</span> true, false</p>
+        </article>
+      </div>
+    </section>
+    <section id="output">
+      <h2>Output</h2>
+      <p class="intro">Make things happen: Spin, Joint, Face, lights, sound and speech.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-1.png" width="641" height="66" style="min-width:385px" alt="Spin Set Constant block" loading="lazy"></div>
+          <h3>Spin Set Constant</h3>
+          <p>Tells the app your Spin's measurements, so distances and turns come out right.</p>
+          <p class="settings"><span>Settings</span> Axle (default 121.38 mm), Wheel Diameter · value in mm · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-2.png" width="404" height="58" style="min-width:242px" alt="Spin Set Drive Forward block" loading="lazy"></div>
+          <h3>Spin Set Drive Forward</h3>
+          <p>Starts driving (speed 50) until another drive block, Stop, or the end of the program. Left / Right turn on the spot.</p>
+          <p class="settings"><span>Settings</span> Forward, Backward, Stop, Left, Right · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-3.png" width="681" height="66" style="min-width:409px" alt="Spin Set Speed A: B: block" loading="lazy"></div>
+          <h3>Spin Set Speed A: B:</h3>
+          <p>Runs each motor at its own speed until changed. Opposite signs (A 30, B −30) drive straight; the same sign turns on the spot.</p>
+          <p class="settings"><span>Settings</span> A and B: −100 to 100 · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-4.png" width="506" height="66" style="min-width:304px" alt="Spin Set Drive [75] Centimeters block" loading="lazy"></div>
+          <h3>Spin Set Drive [75] Centimeters</h3>
+          <p>Drives straight that distance at speed 50, then stops. Negative drives backward.</p>
+          <p class="settings"><span>Settings</span> Distance · Meters, Centimeters, Feet, Inches · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-5.png" width="664" height="66" style="min-width:398px" alt="Spin Set Drive … With Speed block" loading="lazy"></div>
+          <h3>Spin Set Drive … With Speed</h3>
+          <p>Same, at the speed you set.</p>
+          <p class="settings"><span>Settings</span> Distance · unit · speed · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-6.png" width="469" height="66" style="min-width:281px" alt="Spin Set Spin [90] Degrees block" loading="lazy"></div>
+          <h3>Spin Set Spin [90] Degrees</h3>
+          <p>Turns on the spot (speed 50). Positive = clockwise (12 → 3 o'clock), negative = counterclockwise.</p>
+          <p class="settings"><span>Settings</span> Amount · Times, Degrees, Radians · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-7.png" width="628" height="66" style="min-width:377px" alt="Spin Set Spin … With Speed block" loading="lazy"></div>
+          <h3>Spin Set Spin … With Speed</h3>
+          <p>Same, at the speed you set.</p>
+          <p class="settings"><span>Settings</span> Amount · unit · speed · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-8.png" width="870" height="66" style="min-width:522px" alt="Spin Set Wheel Spin block" loading="lazy"></div>
+          <h3>Spin Set Wheel Spin</h3>
+          <p>Turns one wheel (or both) by an amount, or to an absolute wheel position.</p>
+          <p class="settings"><span>Settings</span> Motor A, Motor B, Both Motors · By, To · amount · Times, Degrees, Radians · speed · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-9.png" width="562" height="58" style="min-width:337px" alt="Spin Set Headlights block" loading="lazy"></div>
+          <h3>Spin Set Headlights</h3>
+          <p>Switches the headlights.</p>
+          <p class="settings"><span>Settings</span> Turn On, Turn Off, Toggle · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-10.png" width="448" height="58" style="min-width:269px" alt="Spin Set Ir Message block" loading="lazy"></div>
+          <h3>Spin Set Ir Message</h3>
+          <p>Sends a key character over infrared, for other Spins to read with Spin Get Ir Message.</p>
+          <p class="settings"><span>Settings</span> A key (default Space) · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-11.png" width="668" height="66" style="min-width:401px" alt="Joint Set Motor Position x: y: block" loading="lazy"></div>
+          <h3>Joint Set Motor Position x: y:</h3>
+          <p>Moves the Joint's motors to these angles (speed 50).</p>
+          <p class="settings"><span>Settings</span> x, y: −90 to 90 degrees · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-12.png" width="827" height="66" style="min-width:496px" alt="Joint Set Motor Position … With Speed block" loading="lazy"></div>
+          <h3>Joint Set Motor Position … With Speed</h3>
+          <p>Same, at the speed you set.</p>
+          <p class="settings"><span>Settings</span> x, y · speed 0–100 · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-13.png" width="341" height="58" style="min-width:205px" alt="Face Set Emotion block" loading="lazy"></div>
+          <h3>Face Set Emotion</h3>
+          <p>Shows an expression on the Face.</p>
+          <p class="settings"><span>Settings</span> Neutral, Happy, Sad, Angry, Tired, Surprised, Fear, Disgust, Close Left Eye, Close Right Eye</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-14.png" width="346" height="58" style="min-width:208px" alt="Face Set Animation block" loading="lazy"></div>
+          <h3>Face Set Animation</h3>
+          <p>Plays a moving expression on the Face.</p>
+          <p class="settings"><span>Settings</span> Laugh, Talk, Happy Surprised, Shock Cry, Rage, Sleep</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-15.png" width="427" height="66" style="min-width:256px" alt="Face Set Eyes Color block" loading="lazy"></div>
+          <h3>Face Set Eyes Color</h3>
+          <p>Colors the irises or eyelids.</p>
+          <p class="settings"><span>Settings</span> Iris, Eyelid · color slot</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-16.png" width="369" height="66" style="min-width:221px" alt="Face Set Focus x: y: block" loading="lazy"></div>
+          <h3>Face Set Focus x: y:</h3>
+          <p>Makes the Face's eyes look toward a point.</p>
+          <p class="settings"><span>Settings</span> x, y</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-17.png" width="148" height="58" style="min-width:89px" alt="Face Vibrate block" loading="lazy"></div>
+          <h3>Face Vibrate</h3>
+          <p>Makes the Face (phone/tablet) vibrate.</p>
+          <p class="settings"><span>Settings</span> —</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-18.png" width="245" height="66" style="min-width:147px" alt="Set Color block" loading="lazy"></div>
+          <h3>Set Color</h3>
+          <p>Sets the light of a module (or the hub) to a color.</p>
+          <p class="settings"><span>Settings</span> Color slot · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-19.png" width="381" height="58" style="min-width:229px" alt="Recover Channel Color block" loading="lazy"></div>
+          <h3>Recover Channel Color</h3>
+          <p>Sets the module's light back to its radio-channel color.</p>
+          <p class="settings"><span>Settings</span> Module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-20.png" width="373" height="66" style="min-width:224px" alt="Speak block" loading="lazy"></div>
+          <h3>Speak</h3>
+          <p>Says the text out loud.</p>
+          <p class="settings"><span>Settings</span> Text slot · 12 languages (English, Română, Polski, Українська, العربية, Dansk, Français, Español, Nederlands, Italiano, Deutsch, Русский)</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-21.png" width="265" height="58" style="min-width:159px" alt="Play Sound block" loading="lazy"></div>
+          <h3>Play Sound</h3>
+          <p>Plays a sound effect.</p>
+          <p class="settings"><span>Settings</span> Angry, Boing, Buzz, Chimp, Elephant, Drum, Fart 1, Fart 2, Laugh, Pling, Running, The End, Twirly, Woof</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-22.png" width="214" height="58" style="min-width:128px" alt="Play Note block" loading="lazy"></div>
+          <h3>Play Note</h3>
+          <p>Plays one musical note.</p>
+          <p class="settings"><span>Settings</span> C, D, E, F, G, A, B, C High</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-output-23.png" width="236" height="58" style="min-width:142px" alt="Play Sound File block" loading="lazy"></div>
+          <h3>Play Sound File</h3>
+          <p>Plays a sound file you added to the app.</p>
+          <p class="settings"><span>Settings</span> Your sound files.</p>
+        </article>
+      </div>
+    </section>
+    <section id="loops">
+      <h2>Loops</h2>
+      <p class="intro">Repeat blocks, wait, or stop.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-loops-1.png" width="185" height="66" style="min-width:111px" alt="Wait Time [1] block" loading="lazy"></div>
+          <h3>Wait Time [1]</h3>
+          <p>Pauses for that many seconds.</p>
+          <p class="settings"><span>Settings</span> Seconds (decimals allowed).</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-loops-2.png" width="703" height="84" style="min-width:422px" alt="Wait Until [ ] block" loading="lazy"></div>
+          <h3>Wait Until [ ]</h3>
+          <p>Pauses until the condition becomes true (comes with Spin Has Reached Target).</p>
+          <p class="settings"><span>Settings</span> Condition slot.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-loops-3.png" width="183" height="84" style="min-width:110px" alt="repeat [10] times do block" loading="lazy"></div>
+          <h3>repeat [10] times do</h3>
+          <p>Repeats the blocks inside a set number of times.</p>
+          <p class="settings"><span>Settings</span> Number.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-loops-4.png" width="121" height="75" style="min-width:73px" alt="While Forever do block" loading="lazy"></div>
+          <h3>While Forever do</h3>
+          <p>Repeats the blocks inside until you press Stop.</p>
+          <p class="settings"><span>Settings</span> —</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-loops-5.png" width="218" height="74" style="min-width:131px" alt="repeat while [ ] do block" loading="lazy"></div>
+          <h3>repeat while [ ] do</h3>
+          <p>while: repeats as long as the condition is true; until: until it becomes true.</p>
+          <p class="settings"><span>Settings</span> while, until · condition</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-loops-6.png" width="405" height="84" style="min-width:243px" alt="count with i from [ ] to [ ] by [ ] do block" loading="lazy"></div>
+          <h3>count with i from [ ] to [ ] by [ ] do</h3>
+          <p>Repeats with the variable i counting from the first number to the second in steps.</p>
+          <p class="settings"><span>Settings</span> Variable · from · to · step</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-loops-7.png" width="414" height="146" style="min-width:248px" alt="for each item j in list [ ] do block" loading="lazy"></div>
+          <h3>for each item j in list [ ] do</h3>
+          <p>Repeats once per list item, with j set to that item.</p>
+          <p class="settings"><span>Settings</span> Variable · list slot</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-loops-8.png" width="172" height="46" style="min-width:103px" alt="break out of loop block" loading="lazy"></div>
+          <h3>break out of loop</h3>
+          <p>Inside a loop: break out leaves it now; continue with next iteration skips to the next round.</p>
+          <p class="settings"><span>Settings</span> break out, continue with next iteration</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-loops-9.png" width="120" height="37" style="min-width:72px" alt="Stop Program block" loading="lazy"></div>
+          <h3>Stop Program</h3>
+          <p>Ends the program right here, like pressing Stop.</p>
+          <p class="settings"><span>Settings</span> —</p>
+        </article>
+      </div>
+    </section>
+    <section id="colors">
+      <h2>Colors</h2>
+      <p class="intro">Colors go into any color slot (Set Color, Face Set Eyes Color, camera and drawing blocks).</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-colors-1.png" width="44" height="36" style="min-width:26px" alt="Color swatch block" loading="lazy"></div>
+          <h3>Color swatch</h3>
+          <p>A color picked from the palette.</p>
+          <p class="settings"><span>Settings</span> The color.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-colors-2.png" width="143" height="38" style="min-width:86px" alt="Random Color block" loading="lazy"></div>
+          <h3>Random Color</h3>
+          <p>A different random color each time.</p>
+          <p class="settings"><span>Settings</span> —</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-colors-3.png" width="512" height="46" style="min-width:307px" alt="Custom Color Red: Green: Blue: block" loading="lazy"></div>
+          <h3>Custom Color Red: Green: Blue:</h3>
+          <p>A color mixed from red, green and blue amounts.</p>
+          <p class="settings"><span>Settings</span> Each 0–255.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-colors-4.png" width="430" height="46" style="min-width:258px" alt="Custom Color Blend block" loading="lazy"></div>
+          <h3>Custom Color Blend</h3>
+          <p>A mix of two colors.</p>
+          <p class="settings"><span>Settings</span> Two color slots · ratio 0–100 (how much of each)</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-colors-5.png" width="459" height="46" style="min-width:275px" alt="Get Color Channel block" loading="lazy"></div>
+          <h3>Get Color Channel</h3>
+          <p>The red, green or blue amount of a color, as a number 0–255.</p>
+          <p class="settings"><span>Settings</span> Red, Green, Blue · color slot</p>
+        </article>
+      </div>
+    </section>
+    <section id="functions">
+      <h2>Functions</h2>
+      <p class="intro">Make your own blocks: name a group of blocks once and use it many times. The category starts with the two “to do something” blocks; a call block for each function you make appears below them.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-functions-1.png" width="224" height="70" style="min-width:134px" alt="to do something block" loading="lazy"></div>
+          <h3>to do something</h3>
+          <p>Defines a function: the blocks inside run whenever it is called.</p>
+          <p class="settings"><span>Settings</span> Name · inputs (gear icon)</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-functions-2.png" width="266" height="95" style="min-width:160px" alt="to do something … return block" loading="lazy"></div>
+          <h3>to do something … return</h3>
+          <p>Defines a function that gives back a value.</p>
+          <p class="settings"><span>Settings</span> Name · inputs · return slot</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-functions-3.png" width="190" height="120" style="min-width:114px" alt="if … return block" loading="lazy"></div>
+          <h3>if … return</h3>
+          <p>Inside a function: gives back a value and leaves early when the condition is true.</p>
+          <p class="settings"><span>Settings</span> Condition · value</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-functions-4.png" width="121" height="41" style="min-width:73px" alt="do something (call) block" loading="lazy"></div>
+          <h3>do something (call)</h3>
+          <p>Runs your function. One appears per function you define.</p>
+          <p class="settings"><span>Settings</span> The function's inputs.</p>
+        </article>
+      </div>
+    </section>
+    <section id="input">
+      <h2>Input</h2>
+      <p class="intro">Read sensors, motors, sound, battery, time and keys. These blocks fit into slots.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-input-1.png" width="686" height="54" style="min-width:412px" alt="Spin Get Sensor (light sensors) block" loading="lazy"></div>
+          <h3>Spin Get Sensor (light sensors)</h3>
+          <p>A reading from one of the Spin's three light sensors.</p>
+          <p class="settings"><span>Settings</span> Proximity, Color, Ambient, Directed · sensor 1, 2, 3 · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-input-2.png" width="585" height="62" style="min-width:351px" alt="Spin Obstacle Detected [50] block" loading="lazy"></div>
+          <h3>Spin Obstacle Detected [50]</h3>
+          <p>True when any of the three distance sensors reaches that level, i.e. something is close to it.</p>
+          <p class="settings"><span>Settings</span> Level 0–100 (higher = nearer) · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-input-3.png" width="583" height="61" style="min-width:350px" alt="Spin Color Found block" loading="lazy"></div>
+          <h3>Spin Color Found</h3>
+          <p>True when the chosen sensor sees that color (the headlight turns on to look).</p>
+          <p class="settings"><span>Settings</span> red, green, blue, yellow, magenta, cyan, white, black · sensor 1–3 · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-input-4.png" width="650" height="54" style="min-width:390px" alt="Spin Check If … Are Motors Moving block" loading="lazy"></div>
+          <h3>Spin Check If … Are Motors Moving</h3>
+          <p>True when the chosen motors are (or, for No Motors, are not) turning.</p>
+          <p class="settings"><span>Settings</span> No Motors, Any Motors, Both Motors, Motor A, Motor B · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-input-5.png" width="501" height="54" style="min-width:301px" alt="Spin Get Sensor (motors) block" loading="lazy"></div>
+          <h3>Spin Get Sensor (motors)</h3>
+          <p>A wheel's angle, number of rounds, or speed.</p>
+          <p class="settings"><span>Settings</span> Angle A, Angle B, Rounds A, Rounds B, Speed A, Speed B · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-input-6.png" width="567" height="54" style="min-width:340px" alt="Spin Has Reached Target block" loading="lazy"></div>
+          <h3>Spin Has Reached Target</h3>
+          <p>True when the last drive, spin or wheel spin has finished.</p>
+          <p class="settings"><span>Settings</span> No Motors, Any Motors, Both Motors, Motor A, Motor B · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-input-7.png" width="458" height="54" style="min-width:275px" alt="Spin Get Ir Message block" loading="lazy"></div>
+          <h3>Spin Get Ir Message</h3>
+          <p>True when the last infrared message received is that key.</p>
+          <p class="settings"><span>Settings</span> A key (default Space) · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-input-8.png" width="497" height="54" style="min-width:298px" alt="Read Joint Sensor block" loading="lazy"></div>
+          <h3>Read Joint Sensor</h3>
+          <p>A Joint motor's angle, force (torque) or speed.</p>
+          <p class="settings"><span>Settings</span> Position X/Y, Torque X/Y, Speed X/Y · module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-input-9.png" width="370" height="54" style="min-width:222px" alt="Face Read Sensor block" loading="lazy"></div>
+          <h3>Face Read Sensor</h3>
+          <p>A reading from the Face (the phone or tablet running it).</p>
+          <p class="settings"><span>Settings</span> Acceleration X/Y/Z, Compass, Touch Count, Touch Position X/Y, Latitude, Longitude, Altitude</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-input-10.png" width="168" height="36" style="min-width:101px" alt="Module Id block" loading="lazy"></div>
+          <h3>Module Id</h3>
+          <p>A module's ID as text, for blocks that take a module in a slot.</p>
+          <p class="settings"><span>Settings</span> Module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-input-11.png" width="132" height="54" style="min-width:79px" alt="Get Time block" loading="lazy"></div>
+          <h3>Get Time</h3>
+          <p>Seconds since the program started.</p>
+          <p class="settings"><span>Settings</span> —</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-input-12.png" width="150" height="54" style="min-width:90px" alt="Microphone block" loading="lazy"></div>
+          <h3>Microphone</h3>
+          <p>How loud it is around the device you program on.</p>
+          <p class="settings"><span>Settings</span> —</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-input-13.png" width="231" height="54" style="min-width:139px" alt="Battery Level block" loading="lazy"></div>
+          <h3>Battery Level</h3>
+          <p>A module's battery charge in percent.</p>
+          <p class="settings"><span>Settings</span> Module</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-input-14.png" width="258" height="54" style="min-width:155px" alt="Check For Key [ ] block" loading="lazy"></div>
+          <h3>Check For Key [ ]</h3>
+          <p>True while that key is held down.</p>
+          <p class="settings"><span>Settings</span> Any key you type.</p>
+        </article>
+      </div>
+    </section>
+    <section id="ai-senses">
+      <h2>AI Senses</h2>
+      <p class="intro">Object recognition by the Face module's camera; a Face must be connected. Object kinds: Person, Cat, Dog, Car, Cup, Laptop, Cell Phone and 70+ more.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-ai-senses-1.png" width="643" height="54" style="min-width:386px" alt="Face Get If Object Recognized block" loading="lazy"></div>
+          <h3>Face Get If Object Recognized</h3>
+          <p>True when the camera currently sees an object of that kind.</p>
+          <p class="settings"><span>Settings</span> Object kind.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-ai-senses-2.png" width="555" height="54" style="min-width:333px" alt="Face Get Recognized Object Of Class block" loading="lazy"></div>
+          <h3>Face Get Recognized Object Of Class</h3>
+          <p>The first recognized object of that kind (use it with Face Read Sensor … Of Object).</p>
+          <p class="settings"><span>Settings</span> Object kind.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-ai-senses-3.png" width="278" height="54" style="min-width:167px" alt="Face Get Recognized Objects block" loading="lazy"></div>
+          <h3>Face Get Recognized Objects</h3>
+          <p>A list of every object the camera recognizes right now.</p>
+          <p class="settings"><span>Settings</span> —</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-ai-senses-4.png" width="753" height="54" style="min-width:452px" alt="Face Read Sensor … Of Object Class block" loading="lazy"></div>
+          <h3>Face Read Sensor … Of Object Class</h3>
+          <p>One detail about a recognized object of that kind; empty if none is seen.</p>
+          <p class="settings"><span>Settings</span> Label, Distance, Horizontal Angle, Vertical Angle, Emotion, Facial Expression · object kind</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-ai-senses-5.png" width="546" height="61" style="min-width:328px" alt="Face Read Sensor … Of Object [ ] block" loading="lazy"></div>
+          <h3>Face Read Sensor … Of Object [ ]</h3>
+          <p>One detail about an object you already have (from the blocks above).</p>
+          <p class="settings"><span>Settings</span> Label, Distance, Horizontal Angle, Vertical Angle, Emotion, Facial Expression, Confidence Score · object slot</p>
+        </article>
+      </div>
+    </section>
+    <section id="vision">
+      <h2>Vision</h2>
+      <p class="intro">Uses the camera of the device you program on (allow camera access when asked); the picture shows in the Vision panel. Center positions are x/y in the camera picture.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-vision-1.png" width="207" height="58" style="min-width:124px" alt="Camera Take Picture block" loading="lazy"></div>
+          <h3>Camera Take Picture</h3>
+          <p>Takes a photo from the camera.</p>
+          <p class="settings"><span>Settings</span> —</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-vision-2.png" width="349" height="62" style="min-width:209px" alt="Camera Check For Simple Color block" loading="lazy"></div>
+          <h3>Camera Check For Simple Color</h3>
+          <p>True when the camera sees that color.</p>
+          <p class="settings"><span>Settings</span> Color slot.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-vision-3.png" width="739" height="62" style="min-width:443px" alt="Camera Check For Advanced Color block" loading="lazy"></div>
+          <h3>Camera Check For Advanced Color</h3>
+          <p>Same, with tuning.</p>
+          <p class="settings"><span>Settings</span> Color · Nuances (how close a shade must be, default 10) · Size (smallest patch that counts, default 30)</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-vision-4.png" width="587" height="62" style="min-width:352px" alt="Camera Get Center From Simple Color block" loading="lazy"></div>
+          <h3>Camera Get Center From Simple Color</h3>
+          <p>Where that color is in the picture.</p>
+          <p class="settings"><span>Settings</span> x, y · color slot</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-vision-5.png" width="976" height="62" style="min-width:586px" alt="Camera Get Center From Advanced Color block" loading="lazy"></div>
+          <h3>Camera Get Center From Advanced Color</h3>
+          <p>Same, with tuning.</p>
+          <p class="settings"><span>Settings</span> x, y · color · Nuances · Size</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-vision-6.png" width="494" height="62" style="min-width:296px" alt="Camera Check For Motion block" loading="lazy"></div>
+          <h3>Camera Check For Motion</h3>
+          <p>True when something moves in front of the camera.</p>
+          <p class="settings"><span>Settings</span> Motion Amount (how big a movement counts, default 5)</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-vision-7.png" width="542" height="62" style="min-width:325px" alt="Camera Get Motion Center block" loading="lazy"></div>
+          <h3>Camera Get Motion Center</h3>
+          <p>Where the movement is in the picture.</p>
+          <p class="settings"><span>Settings</span> x, y · Motion Amount</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-vision-8.png" width="238" height="54" style="min-width:143px" alt="Camera Check For Face block" loading="lazy"></div>
+          <h3>Camera Check For Face</h3>
+          <p>True when the camera sees a face.</p>
+          <p class="settings"><span>Settings</span> —</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-vision-9.png" width="286" height="54" style="min-width:172px" alt="Camera Get Face Center block" loading="lazy"></div>
+          <h3>Camera Get Face Center</h3>
+          <p>Where the face is in the picture.</p>
+          <p class="settings"><span>Settings</span> x, y</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-vision-10.png" width="311" height="54" style="min-width:187px" alt="Image Read block" loading="lazy"></div>
+          <h3>Image Read</h3>
+          <p>The current camera picture, for the image blocks below.</p>
+          <p class="settings"><span>Settings</span> Image From Feed</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-vision-11.png" width="466" height="84" style="min-width:280px" alt="Image Show [ ] block" loading="lazy"></div>
+          <h3>Image Show [ ]</h3>
+          <p>Shows an image in the Vision panel.</p>
+          <p class="settings"><span>Settings</span> Image slot.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-vision-12.png" width="672" height="80" style="min-width:403px" alt="Image Filter block" loading="lazy"></div>
+          <h3>Image Filter</h3>
+          <p>Gives a filtered copy of an image.</p>
+          <p class="settings"><span>Settings</span> Grayscale, Hsv, Canny (edges), Blur · image slot</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-vision-13.png" width="511" height="84" style="min-width:307px" alt="Image Save block" loading="lazy"></div>
+          <h3>Image Save</h3>
+          <p>Saves an image under a name.</p>
+          <p class="settings"><span>Settings</span> Image slot · name</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-vision-14.png" width="341" height="58" style="min-width:205px" alt="Video Filter block" loading="lazy"></div>
+          <h3>Video Filter</h3>
+          <p>Applies a filter to the live camera view.</p>
+          <p class="settings"><span>Settings</span> Grayscale, Hsv, Canny, Blur</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-vision-15.png" width="185" height="58" style="min-width:111px" alt="Video Filter Reset block" loading="lazy"></div>
+          <h3>Video Filter Reset</h3>
+          <p>Removes all video filters.</p>
+          <p class="settings"><span>Settings</span> —</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-vision-16.png" width="199" height="58" style="min-width:119px" alt="Video Clear Shapes block" loading="lazy"></div>
+          <h3>Video Clear Shapes</h3>
+          <p>Removes all drawn shapes and text from the camera view.</p>
+          <p class="settings"><span>Settings</span> —</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-vision-17.png" width="747" height="66" style="min-width:448px" alt="Video Draw Circle block" loading="lazy"></div>
+          <h3>Video Draw Circle</h3>
+          <p>Draws a circle on the camera view.</p>
+          <p class="settings"><span>Settings</span> Center x, y · radius · color</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-vision-18.png" width="928" height="66" style="min-width:557px" alt="Video Draw Rect block" loading="lazy"></div>
+          <h3>Video Draw Rect</h3>
+          <p>Draws a rectangle on the camera view.</p>
+          <p class="settings"><span>Settings</span> Center x, y · width · height · color</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-vision-19.png" width="728" height="66" style="min-width:437px" alt="Video Draw Text block" loading="lazy"></div>
+          <h3>Video Draw Text</h3>
+          <p>Writes text on the camera view.</p>
+          <p class="settings"><span>Settings</span> Text · position x, y · color</p>
+        </article>
+      </div>
+    </section>
+    <section id="data">
+      <h2>Data</h2>
+      <p class="intro">Show values, draw graphs, and keep measurements in files on the device.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-data-1.png" width="270" height="66" style="min-width:162px" alt="Print [ ] block" loading="lazy"></div>
+          <h3>Print [ ]</h3>
+          <p>Writes the value in the Console panel.</p>
+          <p class="settings"><span>Settings</span> Value slot.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-data-2.png" width="340" height="66" style="min-width:204px" alt="Time Series [ ] block" loading="lazy"></div>
+          <h3>Time Series [ ]</h3>
+          <p>Adds the value as the next point on a live graph line.</p>
+          <p class="settings"><span>Settings</span> Value · line color: Red, Green, Blue, Yellow, Cyan, Magenta</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-data-3.png" width="432" height="66" style="min-width:259px" alt="Line Plot x: y: block" loading="lazy"></div>
+          <h3>Line Plot x: y:</h3>
+          <p>Adds a point (x, y) to a line graph.</p>
+          <p class="settings"><span>Settings</span> x · y · line color</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-data-4.png" width="467" height="66" style="min-width:280px" alt="Scatter Plot x: y: block" loading="lazy"></div>
+          <h3>Scatter Plot x: y:</h3>
+          <p>Adds a dot (x, y) to a scatter graph.</p>
+          <p class="settings"><span>Settings</span> x · y · dot color</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-data-5.png" width="312" height="62" style="min-width:187px" alt="Type Cast [ ] To block" loading="lazy"></div>
+          <h3>Type Cast [ ] To</h3>
+          <p>Turns a value into text or a number.</p>
+          <p class="settings"><span>Settings</span> string (text), int (whole number), float (decimal)</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-data-6.png" width="403" height="54" style="min-width:242px" alt="Type Cast List [ ] To block" loading="lazy"></div>
+          <h3>Type Cast List [ ] To</h3>
+          <p>Same, for every item of a list.</p>
+          <p class="settings"><span>Settings</span> string, int, float</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-data-7.png" width="482" height="84" style="min-width:289px" alt="Log [ ] Log In File [ ] block" loading="lazy"></div>
+          <h3>Log [ ] Log In File [ ]</h3>
+          <p>Adds the value as a new line in a CSV file on the device.</p>
+          <p class="settings"><span>Settings</span> Value (default: Get Time) · file name (default MyFableLog)</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-data-8.png" width="309" height="62" style="min-width:185px" alt="Read Csv [ ] block" loading="lazy"></div>
+          <h3>Read Csv [ ]</h3>
+          <p>The contents of a CSV file, as a list of rows.</p>
+          <p class="settings"><span>Settings</span> File name.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-data-9.png" width="814" height="62" style="min-width:488px" alt="Read Csv … Delimiter … Skip Header block" loading="lazy"></div>
+          <h3>Read Csv … Delimiter … Skip Header</h3>
+          <p>Same, with options.</p>
+          <p class="settings"><span>Settings</span> File name · separator (default ;) · skip the first row (true/false)</p>
+        </article>
+      </div>
+    </section>
+    <section id="variables">
+      <h2>Variables</h2>
+      <p class="intro">A variable is a named box that holds a value. Press Create variable… first; the blocks below then appear for your variables.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-variables-1.png" width="140" height="40" style="min-width:84px" alt="set [item] to [ ] block" loading="lazy"></div>
+          <h3>set [item] to [ ]</h3>
+          <p>Puts a value into the variable.</p>
+          <p class="settings"><span>Settings</span> Variable · value slot</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-variables-2.png" width="214" height="40" style="min-width:128px" alt="change [item] by [1] block" loading="lazy"></div>
+          <h3>change [item] by [1]</h3>
+          <p>Adds a number to the variable (negative subtracts).</p>
+          <p class="settings"><span>Settings</span> Variable · number</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-variables-3.png" width="83" height="36" style="min-width:50px" alt="[item] (get) block" loading="lazy"></div>
+          <h3>[item] (get)</h3>
+          <p>The value the variable holds now. One appears per variable.</p>
+          <p class="settings"><span>Settings</span> —</p>
+        </article>
+      </div>
+    </section>
+    <section id="text">
+      <h2>Text</h2>
+      <p class="intro">Words and sentences.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-text-1.png" width="87" height="36" style="min-width:52px" alt="“ ” block" loading="lazy"></div>
+          <h3>“ ”</h3>
+          <p>A piece of text you type.</p>
+          <p class="settings"><span>Settings</span> The text.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-text-2.png" width="244" height="46" style="min-width:146px" alt="[ ] + [ ] block" loading="lazy"></div>
+          <h3>[ ] + [ ]</h3>
+          <p>Joins two values into one text, with a space between (e.g. &quot;Number 1&quot;).</p>
+          <p class="settings"><span>Settings</span> Two value slots.</p>
+        </article>
+      </div>
+    </section>
+    <section id="lists">
+      <h2>Lists</h2>
+      <p class="intro">A list holds several values in order; position #1 is the first item.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-lists-1.png" width="152" height="27" style="min-width:91px" alt="create empty list block" loading="lazy"></div>
+          <h3>create empty list</h3>
+          <p>A list with nothing in it.</p>
+          <p class="settings"><span>Settings</span> —</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-lists-2.png" width="171" height="105" style="min-width:103px" alt="create list with [ ] [ ] [ ] block" loading="lazy"></div>
+          <h3>create list with [ ] [ ] [ ]</h3>
+          <p>A list of the values in the slots (gear icon adds or removes slots).</p>
+          <p class="settings"><span>Settings</span> Value slots.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-lists-3.png" width="412" height="46" style="min-width:247px" alt="create list with item [ ] repeated [ ] times block" loading="lazy"></div>
+          <h3>create list with item [ ] repeated [ ] times</h3>
+          <p>A list of the same value repeated.</p>
+          <p class="settings"><span>Settings</span> Value · count</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-lists-4.png" width="263" height="37" style="min-width:158px" alt="Lists Copy [ ] block" loading="lazy"></div>
+          <h3>Lists Copy [ ]</h3>
+          <p>A separate copy of a list, so changes don't affect the original.</p>
+          <p class="settings"><span>Settings</span> List slot.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-lists-5.png" width="246" height="27" style="min-width:148px" alt="length of [ ] block" loading="lazy"></div>
+          <h3>length of [ ]</h3>
+          <p>How many items the list has.</p>
+          <p class="settings"><span>Settings</span> List slot.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-lists-6.png" width="252" height="37" style="min-width:151px" alt="[ ] is empty block" loading="lazy"></div>
+          <h3>[ ] is empty</h3>
+          <p>True when the list has no items.</p>
+          <p class="settings"><span>Settings</span> List slot.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-lists-7.png" width="374" height="37" style="min-width:224px" alt="in list [ ] Most Freq / Count block" loading="lazy"></div>
+          <h3>in list [ ] Most Freq / Count</h3>
+          <p>Most Freq: the value that appears most often. Count: how often a value appears (an extra slot for the value appears).</p>
+          <p class="settings"><span>Settings</span> Most Freq, Count · list</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-lists-8.png" width="530" height="46" style="min-width:318px" alt="in list [ ] find first occurrence of item [ ] block" loading="lazy"></div>
+          <h3>in list [ ] find first occurrence of item [ ]</h3>
+          <p>The position of the item (0 if it isn't there).</p>
+          <p class="settings"><span>Settings</span> first, last · list · item</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-lists-9.png" width="398" height="46" style="min-width:239px" alt="in list [ ] get # [ ] block" loading="lazy"></div>
+          <h3>in list [ ] get # [ ]</h3>
+          <p>Reads (or reads and removes, or removes) one item.</p>
+          <p class="settings"><span>Settings</span> get, get and remove, remove · #, # from end, first, last, random</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-lists-10.png" width="471" height="50" style="min-width:283px" alt="in list [ ] set # [ ] as [ ] block" loading="lazy"></div>
+          <h3>in list [ ] set # [ ] as [ ]</h3>
+          <p>Replaces an item, or inserts a new one at that position.</p>
+          <p class="settings"><span>Settings</span> set, insert at · #, # from end, first, last, random · value</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-lists-11.png" width="713" height="45" style="min-width:428px" alt="in list [ ] Sublist block" loading="lazy"></div>
+          <h3>in list [ ] Sublist</h3>
+          <p>Part of a list, from one position to another.</p>
+          <p class="settings"><span>Settings</span> Get, Get Remove, Remove · start: From Start, From End, First · end: #, # from end, last</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-lists-12.png" width="363" height="37" style="min-width:218px" alt="Lists Sort [ ] block" loading="lazy"></div>
+          <h3>Lists Sort [ ]</h3>
+          <p>The list sorted.</p>
+          <p class="settings"><span>Settings</span> ascending, descending</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-lists-13.png" width="777" height="46" style="min-width:466px" alt="Lists Concat [ ] [ ] block" loading="lazy"></div>
+          <h3>Lists Concat [ ] [ ]</h3>
+          <p>Two lists joined into one; the third slot keeps duplicates when true, removes them when false.</p>
+          <p class="settings"><span>Settings</span> Two lists · keep duplicates (true/false)</p>
+        </article>
+      </div>
+    </section>
+    <section id="math">
+      <h2>Math</h2>
+      <p class="intro">Numbers and calculations.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-math-1.png" width="47" height="36" style="min-width:28px" alt="0 block" loading="lazy"></div>
+          <h3>0</h3>
+          <p>A number you type.</p>
+          <p class="settings"><span>Settings</span> The number.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-math-2.png" width="173" height="46" style="min-width:104px" alt="[ ] + [ ] block" loading="lazy"></div>
+          <h3>[ ] + [ ]</h3>
+          <p>The result of a calculation on two numbers.</p>
+          <p class="settings"><span>Settings</span> +, −, ×, ÷, ^ (power)</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-math-3.png" width="181" height="36" style="min-width:109px" alt="square root [ ] block" loading="lazy"></div>
+          <h3>square root [ ]</h3>
+          <p>A function of one number.</p>
+          <p class="settings"><span>Settings</span> square root, absolute, − (negate), ln, log10, e^, 10^</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-math-4.png" width="128" height="36" style="min-width:77px" alt="sin [ ] block" loading="lazy"></div>
+          <h3>sin [ ]</h3>
+          <p>A trigonometry result; angles in degrees.</p>
+          <p class="settings"><span>Settings</span> sin, cos, tan, asin, acos, atan</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-math-5.png" width="59" height="36" style="min-width:35px" alt="π block" loading="lazy"></div>
+          <h3>π</h3>
+          <p>A math constant.</p>
+          <p class="settings"><span>Settings</span> π, e, φ, sqrt(2), sqrt(½), ∞</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-math-6.png" width="106" height="36" style="min-width:64px" alt="Angle [0] block" loading="lazy"></div>
+          <h3>Angle [0]</h3>
+          <p>An angle you pick on a dial, in degrees.</p>
+          <p class="settings"><span>Settings</span> The angle.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-math-7.png" width="163" height="46" style="min-width:98px" alt="[ ] is even block" loading="lazy"></div>
+          <h3>[ ] is even</h3>
+          <p>True when the number has that property.</p>
+          <p class="settings"><span>Settings</span> even, odd, prime, whole, positive, negative, divisible by</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-math-8.png" width="200" height="36" style="min-width:120px" alt="round [ ] block" loading="lazy"></div>
+          <h3>round [ ]</h3>
+          <p>The number rounded.</p>
+          <p class="settings"><span>Settings</span> round, round up, round down</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-math-9.png" width="543" height="46" style="min-width:326px" alt="sum of list [ ] block" loading="lazy"></div>
+          <h3>sum of list [ ]</h3>
+          <p>A summary of a list of numbers.</p>
+          <p class="settings"><span>Settings</span> sum, min, max, average, median, modes, standard deviation, random item</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-math-10.png" width="255" height="46" style="min-width:153px" alt="remainder of [ ] ÷ [ ] block" loading="lazy"></div>
+          <h3>remainder of [ ] ÷ [ ]</h3>
+          <p>What is left over after dividing.</p>
+          <p class="settings"><span>Settings</span> Two numbers.</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-math-11.png" width="423" height="46" style="min-width:254px" alt="Math Get Min / Max block" loading="lazy"></div>
+          <h3>Math Get Min / Max</h3>
+          <p>The smaller or larger of two numbers.</p>
+          <p class="settings"><span>Settings</span> Min, Max</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-math-12.png" width="335" height="46" style="min-width:201px" alt="random integer from [ ] to [ ] block" loading="lazy"></div>
+          <h3>random integer from [ ] to [ ]</h3>
+          <p>A random whole number between the two, both included.</p>
+          <p class="settings"><span>Settings</span> Lowest, highest.</p>
+        </article>
+      </div>
+    </section>
+    <section id="prototypes">
+      <h2>Prototypes</h2>
+      <p class="intro">Experimental blocks for a separate Bluetooth sensor accessory (not the hub). They are not supported in this app yet.</p>
+      <div class="cards">
+        
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-prototypes-1.png" width="314" height="54" style="min-width:188px" alt="read from sensor BLE value: block" loading="lazy"></div>
+          <h3>read from sensor BLE value:</h3>
+          <p>Reads one value from the sensor accessory.</p>
+          <p class="settings"><span>Settings</span> A, B, C</p>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/docs-img/advanced-prototypes-2.png" width="254" height="66" style="min-width:152px" alt="write to sensor BLE [ ] block" loading="lazy"></div>
+          <h3>write to sensor BLE [ ]</h3>
+          <p>Sends a number to the sensor accessory.</p>
+          <p class="settings"><span>Settings</span> Number.</p>
+        </article>
+      </div>
+    </section>
+</main>
+</body>
+</html>

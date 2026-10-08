@@ -1,0 +1,71 @@
+# nginx for the fable-blocks Nix package: serves the built website locally and forwards
+# /remote/ws to the relay (nix/relay.cjs). Adapted from server/docker/nginx.conf (removed) for
+# a single-user local run: everything lives under a per-run temp directory, so multiple
+# instances (different ports) don't collide.
+worker_processes 1;
+pid @PIDFILE@;
+error_log stderr warn;
+
+events {
+    worker_connections 256;
+}
+
+http {
+    include @MIME_TYPES@;
+    types {
+        application/manifest+json webmanifest;
+    }
+    default_type application/octet-stream;
+
+    access_log off;
+    server_tokens off;
+    absolute_redirect off;
+    sendfile on;
+    keepalive_timeout 65;
+    gzip on;
+    gzip_types text/css application/javascript application/json image/svg+xml application/wasm;
+
+    client_body_temp_path @TMPDIR@/client_body;
+    proxy_temp_path @TMPDIR@/proxy;
+    fastcgi_temp_path @TMPDIR@/fastcgi;
+    uwsgi_temp_path @TMPDIR@/uwsgi;
+    scgi_temp_path @TMPDIR@/scgi;
+
+    server {
+        listen @WEB_PORT@;
+        server_name _;
+        root @SITE_ROOT@;
+
+        # Remote mode relay (WebSocket).
+        location = /remote/ws {
+            proxy_pass http://127.0.0.1:@RELAY_PORT@;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+            proxy_read_timeout 1h;
+        }
+
+        # File names with a content hash never change.
+        location /assets/ {
+            add_header Cache-Control "public, max-age=31536000, immutable";
+            try_files $uri =404;
+        }
+
+        # Re-checked on every visit so updates arrive.
+        location = /sw.js {
+            add_header Cache-Control "no-cache";
+        }
+        location = /index.html {
+            add_header Cache-Control "no-cache";
+        }
+        location = /remote/ {
+            add_header Cache-Control "no-cache";
+            try_files /remote/index.html =404;
+        }
+
+        location / {
+            add_header Cache-Control "public, max-age=86400";
+            try_files $uri $uri/ /index.html;
+        }
+    }
+}
